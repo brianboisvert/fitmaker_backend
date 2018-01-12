@@ -20,4 +20,5 @@ two = WorkoutExercise.create(workout_id: 1, exercise_id: 2)
 three = WorkoutExercise.create(workout_id: 2, exercise_id: 4)
 four = WorkoutExercise.create(workout_id: 3, exercise_id: 3)
 five = WorkoutExercise.create(workout_id: 3, exercise_id: 1)
- 
+
+brian = User.create(username: 'brian', email: 'brian@boisvert.com', password: 'brian')

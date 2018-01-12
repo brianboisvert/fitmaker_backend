@@ -27,6 +27,7 @@ gem 'rack-cors'
 
 # for authentication
 gem 'bcrypt'
+gem 'jwt'
 # gem 'knock'
 # gem 'pg'
 

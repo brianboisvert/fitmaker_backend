@@ -3,9 +3,11 @@ class WorkoutsController < ApplicationController
 
   # GET /workouts
   def index
-    @workouts = Workout.all
-
-    render json: @workouts
+    if current_user
+      @workouts = Workout.all
+      render json: @workouts
+      # render json: current_user.workouts
+    end
   end
 
   # GET /workouts/1
@@ -52,4 +54,5 @@ class WorkoutsController < ApplicationController
     def workout_params
       params.require(:workout).permit(:title, :description, :intensity, :duration, :category)
     end
+
 end
