@@ -28,6 +28,10 @@ gem 'rack-cors'
 # for authentication
 gem 'bcrypt'
 gem 'jwt'
+
+# Serializer
+gem 'active_model_serializers'
+
 # gem 'knock'
 # gem 'pg'
 
