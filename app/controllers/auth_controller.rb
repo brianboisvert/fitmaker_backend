@@ -1,3 +1,4 @@
+
 class AuthController < ApplicationController
 
   def create
