@@ -3,4 +3,5 @@ class Workout < ApplicationRecord
   has_many :exercises, through: :workout_exercises
   has_many :user_workouts
   has_many :users, through: :user_workouts
+  serialize :sets
 end

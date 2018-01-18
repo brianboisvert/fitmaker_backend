@@ -1,6 +1,7 @@
 class WorkoutsController < ApplicationController
   before_action :set_workout, only: [:show, :update, :destroy]
 
+
   # GET /workouts
   def index
     if current_user
@@ -21,13 +22,14 @@ class WorkoutsController < ApplicationController
 
   # POST /workouts
   def create
-    # byebug;
-
-    @workout = Workout.new(workout_params)
-
-    # params[:workout][:sets].each do |set|
-    #   @workout.sets.build(number: set[:number], exercies: set[:exercises])
-    # end
+    @workout = Workout.new(
+      title: params[:title],
+      intensity: params[:intensity],
+      category: params[:category],
+      duration: params[:duration],
+      description: params[:description],
+      sets: params[:sets]
+    )
 
     if @workout.save
       current_user.workouts << @workout
@@ -62,7 +64,7 @@ class WorkoutsController < ApplicationController
     @workout.destroy
 
     if @workout.destroy
-      @workouts = Workout.all
+      @workouts = current_user.workouts
       render json: @workouts
     end
   end
@@ -75,7 +77,7 @@ class WorkoutsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def workout_params
-      params.require(:workout).permit(:title, :description, :intensity, :duration, :category, :id)
+      params.require(:workout).permit(:title, :description, :intensity, :duration, :category, :id, :users, :sets)
     end
 
 end

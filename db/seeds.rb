@@ -6,9 +6,9 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-titan = Workout.create(title: 'Titan', description: 'Advanced muscle building routine', intensity: 'hard', duration: 45, category: "bodyweight")
-venus = Workout.create(title: 'Venus', description: 'Beginner cardio routine', intensity: 'easy', duration: 20, category: "cardio")
-apollo = Workout.create(title: 'Apollo', description: 'Muscle building with cardio active recovery', intensity: 'medium', duration: 30, category: "bodyweight/cardio")
+titan = Workout.create(title: 'Titan', description: 'Advanced muscle building routine', intensity: 'hard', duration: 45, category: "bodyweight", sets: ["lunges", "burpees"])
+venus = Workout.create(title: 'Venus', description: 'Beginner cardio routine', intensity: 'easy', duration: 20, category: "cardio", sets: [["supermans", "stretch"], ["russian twists", "dumb bell presses"]])
+apollo = Workout.create(title: 'Apollo', description: 'Muscle building with cardio active recovery', intensity: 'medium', duration: 30, category: "bodyweight/cardio", sets: [["mountain climbers", "crunch"], ["squat", "overhead press"]])
 
 lunge = Exercise.create(name: 'lunge', description: 'Stand erect with your feet hip-width apart, chest out, and shoulders back, maintaining the natural curvature of your spine. Your knees should be unlocked and your hand on your hips. This is your starting position. Take a moderate-length step forward with one foot, descending to a point in which your rear knee approaches the floor without touching, maintaining your body\'s upright posture. Your front knee should bend about 90 degrees, but for knee health it should not be forward of the vertical plane that extends straight up from your toes. If so, take a slightly longer step. From the bottom position, push back up from your forward foot, bringing it back beside the other. Repeat on the opposite side for the required number of repetitions.')
 pushup = Exercise.create(name: 'pushup', description: 'Lie on the floor face down and place your hands about 36 inches apart while holding your torso up at arms length. Next, lower yourself downward until your chest almost touches the floor as you inhale. Now breathe out and press your upper body back up to the starting position while squeezing your chest. After a brief pause at the top contracted position, you can begin to lower yourself downward again for as many repetitions as needed.')

@@ -50,6 +50,7 @@ ActiveRecord::Schema.define(version: 20180112154240) do
     t.string "intensity"
     t.integer "duration"
     t.string "category"
+    t.string "sets"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
