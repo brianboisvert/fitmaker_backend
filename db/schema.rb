@@ -10,14 +10,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180112154240) do
+ActiveRecord::Schema.define(version: 20180119190521) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "exercise_sets", force: :cascade do |t|
+    t.integer "super_set_id"
+    t.integer "exercise_id"
+    t.integer "duration"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "exercises", force: :cascade do |t|
     t.string "name"
     t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "super_sets", force: :cascade do |t|
+    t.integer "workout_id"
+    t.string "category"
+    t.integer "sets"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -37,20 +53,12 @@ ActiveRecord::Schema.define(version: 20180112154240) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "workout_exercises", force: :cascade do |t|
-    t.integer "workout_id"
-    t.integer "exercise_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "workouts", force: :cascade do |t|
     t.string "title"
     t.text "description"
     t.string "intensity"
     t.integer "duration"
     t.string "category"
-    t.string "sets"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
