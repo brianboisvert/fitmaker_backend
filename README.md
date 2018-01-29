@@ -1,4 +1,4 @@
-#FitMaker - API
+# FitMaker - API
 Welcome to FitMaker, where you can create and save your favorite at-home workouts! This app allows users to register, sign in, browse exercises, and create, edit, and delete workouts.
 
 ## Getting Started
